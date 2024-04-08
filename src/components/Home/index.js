@@ -31,6 +31,10 @@ class Home extends Component{
         this.setState(prevState =>({isrecommendActive:!prevState.isrecommendActive}))
     }
 
+    toggleFilter = () =>{
+        this.setState(prevState =>({isFilterHide:!prevState.isFilterHide}))
+    }
+
     render(){
         const {isFilterHide, isrecommendActive} = this.state
         return(
@@ -76,10 +80,11 @@ class Home extends Component{
                         <hr/>
                         <div className='recommend-sec'>
                             <div className='left-rec'>
-                            <h2 className='item'>3425 ITEMS</h2>
+                            <h2 className='item m-hide'>3425 ITEMS</h2>
+                            <h3 className='side-head d-hide' onClick={this.toggleFilter}>Filter</h3>
                             {isFilterHide ? <h2 className='show-filter' onClick={this.hideFilter}><MdOutlineKeyboardArrowLeft className='arrow' size={16}/>HIDE FILTER</h2> :  <h2 onClick={this.showFilter} className='show-filter'><MdOutlineKeyboardArrowRight className='arrow' size={16}/>SHOW FILTER</h2>  }
                             </div>
-                         <> <h2 className='item recommand' onClick={this.onClickRecommend}>RECOMMENDED <MdKeyboardArrowDown size={16} /></h2>
+                         <> <h2 className='item recommand' onClick={this.onClickRecommend}>RECOMMENDED <MdKeyboardArrowDown size={16} className='m-hide'/></h2>
                           {isrecommendActive && <div className='recommend-options'>
                                 <p className='recommend-names bold'>RECOMMENDED</p>
                                 <p className='recommend-names'>NEWEST FIRST</p>
