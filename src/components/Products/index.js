@@ -23,7 +23,7 @@ const Products = () =>{
         <div className='product-section'>
             <h2 className='side-head'>NEW PRODUCT</h2>
             <ul className='product-container'>
-                {productList.map(eachItem =>(
+                {products.map(eachItem =>(
                     <li className='card'>
                         <img src={eachItem.image} className='product-img' alt='product-img' />
                         <div className='product-text'>
